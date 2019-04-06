@@ -1,0 +1,86 @@
+extends layout
+
+block content
+  div#recordBtn-wrapper
+    h2.text-center Start analysis
+    img#recordBtn(src='/images/mic128.png')
+
+  #stats.hidden
+    h2.text-center Placeholder for feedback
+    h3.text-center(style="margin-bottom: 50px;") Here is what our analysis has found out ...
+
+    div.stat-row
+      span.stat-label Lowest Frequency
+      span.stat-val#lowest-val
+      div.clearfix
+    div.stat-row
+      span.stat-label Highest Frequency
+      span.stat-val#highest-val
+      div.clearfix
+    div.stat-row
+      span.stat-label Average
+      span.stat-val#average-val
+      div.clearfix
+    div.stat-row
+      span.stat-label Median
+      span.stat-val#median-val
+      div.clearfix
+    div.stat-row
+      span.stat-label Range
+      span.stat-val#range-val
+      div.clearfix
+    div.stat-row
+      span.stat-label Mode
+      span.stat-val#mode-val
+      div.clearfix
+
+  #share-buttons.hidden
+    h4.text-center Share Your Results
+    a(href='https://bufferapp.com/add?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&text=Simple Share Buttons', target='_blank')
+      img(src='/images/sharing-icons/buffer.png', alt='Buffer')
+    a(href='http://www.digg.com/submit?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx', target='_blank')
+      img(src='/images/sharing-icons/diggit.png', alt='Digg')
+    a(href='mailto:?Subject=Simple Share Buttons&Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://pitch-detector.herokuapp.com/voice-stats/xxxxx')
+      img(src='/images/sharing-icons/email.png', alt='Email')
+    a(href='http://www.facebook.com/sharer.php?u=https://pitch-detector.herokuapp.com/voice-stats/xxxxx', target='_blank')
+      img(src='/images/sharing-icons/facebook.png', alt='Facebook')
+    a(href='https://plus.google.com/share?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx', target='_blank')
+      img(src='/images/sharing-icons/google.png', alt='Google')
+    a(href='http://www.linkedin.com/shareArticle?mini=true&url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx', target='_blank')
+      img(src='/images/sharing-icons/linkedin.png', alt='LinkedIn')
+    a(href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());")
+      img(src='/images/sharing-icons/pinterest.png', alt='Pinterest')
+    a(href='javascript:;', onclick='window.print()')
+      img(src='/images/sharing-icons/print.png', alt='Print')
+    a(href='http://reddit.com/submit?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&title=Simple Share Buttons', target='_blank')
+      img(src='/images/sharing-icons/reddit.png', alt='Reddit')
+    a(href='http://www.stumbleupon.com/submit?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&title=Simple Share Buttons', target='_blank')
+      img(src='/images/sharing-icons/stumbleupon.png', alt='StumbleUpon')
+    a(href='http://www.tumblr.com/share/link?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&title=Simple Share Buttons', target='_blank')
+      img(src='/images/sharing-icons/tumblr.png', alt='Tumblr')
+    a(href='https://twitter.com/share?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&text=Simple%20Share%20Buttons&hashtags=simplesharebuttons', target='_blank')
+      img(src='/images/sharing-icons/twitter.png', alt='Twitter')
+    a(href='http://vkontakte.ru/share.php?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx', target='_blank')
+      img(src='/images/sharing-icons/vk.png', alt='VK')
+    a(href='http://www.yummly.com/urb/verify?url=https://pitch-detector.herokuapp.com/voice-stats/xxxxx&title=Simple Share Buttons', target='_blank')
+      img(src='/images/sharing-icons/yummly.png', alt='Yummly')
+
+  div#statsChart-wrapper.hidden
+    canvas#statsChart(width='700', height='500')
+
+  div#start-analyzing-wrapper.hidden
+    button#start-analyzing Start Analyzing
+
+  div#analyser-wrapper.hidden
+    canvas.dark-canvas#analyser(width='700', height='300')
+
+  div#wavedisplay-wrapper.hidden
+    canvas.dark-canvas#wavedisplay(width='700', height='300')
+
+  //#viz
+    canvas#analyser(width='1024', height='500')
+    canvas#wavedisplay(width='1024', height='500')
+  // #controls
+    img#record(src='/images/mic128.png', onclick='toggleRecording(this);')
+    a#save(href='#')
+      img(src='/images/save.svg')

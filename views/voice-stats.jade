@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  div#recordBtn-wrapper
+    h2.text-center Voice Details
+
+  #stats
+    div.stat-row
+      span.stat-label Lowest Frequency
+      span.stat-val#lowest-val=stats.lowest
+      div.clearfix
+    div.stat-row
+      span.stat-label Highest Frequency
+      span.stat-val#highest-val=stats.highest
+      div.clearfix
+    div.stat-row
+      span.stat-label Average
+      span.stat-val#average-val=stats.average
+      div.clearfix
+    div.stat-row
+      span.stat-label Median
+      span.stat-val#median-val=stats.median
+      div.clearfix
+    div.stat-row
+      span.stat-label Range
+      span.stat-val#range-val=stats.range
+      div.clearfix
+    div.stat-row
+      span.stat-label Mode
+      span.stat-val#mode-val=stats.mode
+      div.clearfix

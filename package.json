@@ -1,0 +1,25 @@
+{
+  "name": "pitch-detector",
+  "version": "0.0.0",
+  "engines": {
+    "node": "8.11.3"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "formidable": "^1.2.1",
+    "jade": "~1.11.0",
+    "mongoose": "^5.2.9",
+    "morgan": "~1.7.0",
+    "request": "^2.88.0",
+    "request-ip": "^2.1.1",
+    "serve-favicon": "~2.3.0",
+    "ua-parser-js": "^0.7.18"
+  }
+}
